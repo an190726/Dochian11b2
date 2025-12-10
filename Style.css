@@ -1,16 +1,29 @@
-/* Thiết lập font và màu nền chung */
+
+:root {
+    --primary-color: #007bff;    
+    --secondary-color: #28a745;  
+    --background-light: #f4f7f6; 
+    --background-card: #e9ecef;   
+    --text-color: #333;           
+    --text-muted: #6c757d;      
+}
+
+* {
+    box-sizing: border-box; 
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Màu nền nhẹ nhàng */
-    color: #333;
+    background-color: var(--background-light);
+    color: var(--text-color);
 }
 
-/* Kiểu cho Header */
+/* 4. ĐỊNH DẠNG HEADER */
 header {
-    background-color: #007bff; /* Màu xanh dương nổi bật */
+    background-color: var(--primary-color);
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -27,7 +40,6 @@ header p {
     opacity: 0.9;
 }
 
-/* Kiểu cho Main content */
 main {
     max-width: 1000px;
     margin: 20px auto;
@@ -43,29 +55,34 @@ section {
 }
 
 section h2 {
-    color: #007bff;
-    border-bottom: 3px solid #007bff;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: 1.8em;
 }
 
-/* Kiểu cho các Card nội dung */
 .card {
-    background-color: #e9ecef; /* Màu nền xám nhạt */
+    background-color: var(--background-card);
     padding: 15px;
     border-radius: 6px;
     margin-bottom: 15px;
-    border-left: 5px solid #28a745; /* Đường viền xanh lá cây */
+    border-left: 5px solid var(--secondary-color);
+    transition: transform 0.3s ease; 
+}
+
+.card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
-    color: #28a745;
+    color: var(--secondary-color);
     margin-top: 0;
     font-size: 1.4em;
 }
 
-/* Kiểu cho danh sách */
+/* 7. ĐỊNH DẠNG DANH SÁCH VÀ CHÚ THÍCH */
 ul, ol {
     padding-left: 20px;
 }
@@ -74,20 +91,34 @@ ul li, ol li {
     margin-bottom: 8px;
 }
 
-/* Kiểu cho phần chú thích (note) */
 .note {
     font-size: 0.9em;
-    color: #6c757d;
+    color: var(--text-muted);
     margin-top: 15px;
     border-top: 1px dashed #ced4da;
     padding-top: 5px;
 }
 
-/* Kiểu cho Footer */
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
 footer {
     text-align: center;
     padding: 15px 0;
-    background-color: #343a40; /* Màu tối */
+    background-color: #343a40;
     color: #f4f7f6;
     font-size: 0.9em;
     margin-top: 30px;
